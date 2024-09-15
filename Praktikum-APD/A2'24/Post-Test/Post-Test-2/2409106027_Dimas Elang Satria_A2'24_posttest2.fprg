@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="2409106027_Dimas Elang Satria_A2'24_posttest2"/>
+        <attribute name="authors" value="ASUS"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-09-14 09.40.52 PM"/>
+        <attribute name="created" value="QVNVUztMQVBUT1AtNzVNR1QzRDI7MjAyNC0wOS0xNDswOC4zNC4yNSBQTTsyNTk4"/>
+        <attribute name="edited" value="QVNVUztMQVBUT1AtNzVNR1QzRDI7MjAyNC0wOS0xNDswOS40MC41MiBQTTsxOzI3MDQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="NamaLengkap, NIM" type="String" array="False" size=""/>
+            <declare name="HargaBeras, Diskon, PersenDiskon, HargaSetelahDiskon, HargaBerasMawar, HargaBerasSania, HargaBerasMaknyus" type="Real" array="False" size=""/>
+            <input variable="NamaLengkap"/>
+            <input variable="NIM"/>
+            <input variable="HargaBeras"/>
+            <assign variable="HargaBerasMawar" expression="HargaBeras-(HargaBeras*(11/100))"/>
+            <assign variable="HargaBerasSania" expression="HargaBeras-(HargaBeras*(14/100))"/>
+            <assign variable="HargaBerasMaknyus" expression="HargaBeras-(HargaBeras*(17/100))"/>
+            <output expression="NamaLengkap &amp; &quot; dengan NIM &quot; &amp; NIM &amp; &quot; ingin membeli beras seharga Rp.&quot; &amp; HargaBeras" newline="True"/>
+            <output expression="&quot;Jika dia membeli beras Mawar, ia harus membayar Rp.&quot; &amp; HargaBerasMawar &amp; &quot; Setelah mendapat diskon 11%.&quot;" newline="True"/>
+            <output expression="&quot;Jika dia membeli beras Sania, ia harus membayar Rp.&quot; &amp; HargaBerasSania &amp; &quot; Setelah mendapat diskon 14%.&quot;" newline="True"/>
+            <output expression="&quot;Jika dia membeli beras Maknyus, ia harus membayar Rp.&quot; &amp; HargaBerasMaknyus &amp; &quot; Setelah mendapat diskon 17%.&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

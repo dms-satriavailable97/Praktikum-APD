@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="tes 1"/>
+        <attribute name="authors" value="ASUS"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-09-21 08.59.01 PM"/>
+        <attribute name="created" value="QVNVUztMQVBUT1AtNzVNR1QzRDI7MjAyNC0wOS0wNTsxMC4wMy4xMCBQTTsyNTgx"/>
+        <attribute name="edited" value="QVNVUztMQVBUT1AtNzVNR1QzRDI7MjAyNC0wOS0yMTswOC41OS4wMSBQTTs4OzI3MTI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="JumlahPinjaman, PersentaseBungaTahunan, LamaCicilan, BungaPerBulan, JumlahBulan, TotalBunga, CicilanPerBulan" type="Real" array="False" size=""/>
+            <input variable="JumlahPinjaman"/>
+            <input variable="LamaCicilan"/>
+            <if expression="LamaCicilan = 1">
+                <then>
+                    <assign variable="PersentaseBungaTahunan" expression="0.07"/>
+                    <assign variable="JumlahBulan" expression="12"/>
+                </then>
+                <else>
+                    <if expression="LamaCicilan = 2">
+                        <then>
+                            <assign variable="PersentaseBungaTahunan" expression="0.13"/>
+                            <assign variable="JumlahBulan" expression="24"/>
+                        </then>
+                        <else>
+                            <if expression="LamaCicilan = 3">
+                                <then>
+                                    <assign variable="PersentaseBungaTahunan" expression="0.19"/>
+                                    <assign variable="JumlahBulan" expression="36"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <if expression="LamaCicilan == 1 || LamaCicilan == 2 || LamaCicilan == 3">
+                <then>
+                    <assign variable="BungaPerBulan" expression="(PersentaseBungaTahunan/12)*JumlahPinjaman"/>
+                    <assign variable="TotalBunga" expression="BungaPerBulan * JumlahBulan"/>
+                    <assign variable="CicilanPerBulan" expression="(JumlahPinjaman + TotalBunga) / JumlahBulan"/>
+                    <output expression="&quot;Cicilan Per Bulan : Rp.&quot; &amp; CicilanPerBulan" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Opsi Lama Cicilan hanya tersedia untuk 1 tahun, 2 tahun, dan 3 tahun.&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
